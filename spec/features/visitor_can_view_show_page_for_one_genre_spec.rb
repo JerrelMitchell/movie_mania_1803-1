@@ -18,7 +18,7 @@ describe "visitor sees one genre" do
 
   it 'sees average movie rating of this genre' do
     director = Director.create!(name: 'Someone!')
-    movie1 = director.movies.create!(title: 'Shawshank Redemption', description: 'Tim Robbins in jail', rating: 3)
+    movie1 = director.movies.create!(title: 'Shawshank Redemption', description: 'Tim Robbins in jail', rating: 2)
     movie2 = director.movies.create!(title: 'Something Exceptional', description: 'Just kidding', rating: 5)
     sci_fi = movie1.genres.create!(name: 'Sci-fi')
     MovieGenre.create(movie_id: movie2.id, genre_id: sci_fi.id)
@@ -27,5 +27,29 @@ describe "visitor sees one genre" do
     visit genre_path(sci_fi)
 
     expect(page).to have_content(sci_fi.average_movie_rating)
+  end
+
+  it 'sees highest movie rating of this genre' do
+    director = Director.create!(name: 'Someone!')
+    movie1 = director.movies.create!(title: 'Shawshank Redemption', description: 'Tim Robbins in jail', rating: 2)
+    movie2 = director.movies.create!(title: 'Something Exceptional', description: 'Just kidding', rating: 5)
+    sci_fi = movie1.genres.create!(name: 'Sci-fi')
+    MovieGenre.create(movie_id: movie2.id, genre_id: sci_fi.id)
+
+    visit genre_path(sci_fi)
+
+    expect(page).to have_content(sci_fi.highest_movie_rating)
+  end
+
+  it 'sees lowest movie rating of this genre' do
+    director = Director.create!(name: 'Someone!')
+    movie1 = director.movies.create!(title: 'Shawshank Redemption', description: 'Tim Robbins in jail', rating: 2)
+    movie2 = director.movies.create!(title: 'Something Exceptional', description: 'Just kidding', rating: 5)
+    sci_fi = movie1.genres.create!(name: 'Sci-fi')
+    MovieGenre.create(movie_id: movie2.id, genre_id: sci_fi.id)
+
+    visit genre_path(sci_fi)
+
+    expect(page).to have_content(sci_fi.lowest_movie_rating)
   end
 end
