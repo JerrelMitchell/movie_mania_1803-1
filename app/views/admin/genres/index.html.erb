@@ -1,0 +1,12 @@
+<h1>Admin Genres</h1>
+<h3> Create New Genre </h3>
+
+<%= form_for [@admin, @genre] do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.submit %>
+<% end %>
+
+<% @genres.each do |genre| %>
+<%= genre.name %>
+<% end %>
