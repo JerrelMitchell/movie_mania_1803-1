@@ -15,5 +15,12 @@ describe Movie, type: :model do
 
       expect(movie.slug).to eq(movie.title.parameterize)
     end
+
+    it 'should have a default rating' do
+      director = Director.create(name: 'foo')
+      movie = director.movies.create(title: 'Jurassic Park', description: 'blah')
+
+      expect(movie.rating).to eq(0)
+    end
   end
 end

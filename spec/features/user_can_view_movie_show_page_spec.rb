@@ -31,10 +31,19 @@ describe "user sees one movie" do
     expect(page).to have_content(genre1.name)
     expect(page).to have_content(genre2.name)
   end
+
+  it 'sees the number rating given to this movie' do
+    director = Director.create(name: 'George Lucas')
+    movie1 = director.movies.create(title:'Star Wars Episode 4', description: 'A New Hope', rating: 3)
+
+    visit movie_path(movie1.slug)
+
+    expect(page).to have_content(movie1.rating)
+  end
 end
-
-
+#
 # As a Visitor,
 #   When I visit a movie show page,
-#     I see genre names under a heading that says "Genres for this Movie:"
-#       and the genres listed are only the genres associated with this movie.
+#     I see the number rating for this movie
+#
+# (the rating should be an integer attribute (from 1 to 5) for the movie)
