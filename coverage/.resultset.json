@@ -517,6 +517,27 @@
         null,
         null
       ],
+      "/Users/kelveaux/turing/2module/exercises2/movie_mania_1803-1/spec/features/visitor_can_view_show_page_for_one_genre_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
       "/Users/kelveaux/turing/2module/exercises2/movie_mania_1803-1/spec/features/visitor_sees_a_genre_index_page_spec.rb": [
         1,
         null,
@@ -615,11 +636,11 @@
         1,
         null,
         1,
-        54,
+        55,
         null,
         null,
         1,
-        40,
+        41,
         null,
         null,
         1,
@@ -659,11 +680,15 @@
         1,
         1,
         2,
+        null,
+        1,
+        2,
         2,
         null,
         null
       ],
       "/Users/kelveaux/turing/2module/exercises2/movie_mania_1803-1/app/models/genre.rb": [
+        1,
         1,
         1,
         1,
@@ -717,7 +742,7 @@
         1,
         null,
         1,
-        21,
+        23,
         null,
         null
       ],
@@ -766,12 +791,12 @@
         1,
         null,
         1,
-        51,
+        52,
         null,
         null,
         1,
-        35,
-        35,
+        36,
+        36,
         4,
         null,
         null,
@@ -968,9 +993,14 @@
         1,
         1,
         null,
+        null,
+        1,
+        1,
+        1,
+        null,
         null
       ]
     },
-    "timestamp": 1528213593
+    "timestamp": 1528214501
   }
 }

@@ -16,8 +16,8 @@ describe "visits categories index page" do
       expect(page).to_not have_content("Create New Genre")
 
       expect(page).to have_content("All Genres")
-      expect(page).to have_content(@genre1.name)
-      expect(page).to have_content(@genre2.name)
+      expect(page).to have_link(@genre1.name)
+      expect(page).to have_link(@genre2.name)
     end
   end
 end
