@@ -21,12 +21,19 @@ describe "User visits genres index page" do
       expect(page).to have_content(@genre2.name)
     end
 
-    it 'sees a form to create a new genre' do
+    it 'sees a form to create a new genre, and can create one' do
+      new_genre = 'Romance'
       admin = User.create(username: "Dee", password: "password", role: 1)
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
       visit admin_genres_path
 
       expect(page).to have_content("Create New Genre")
+
+      fill_in :genre_name, with: new_genre
+      click_on 'Create Genre'
+
+      expect(current_path).to eq(admin_genres_path)
+      expect(page).to have_content(new_genre)
     end
   end
 
