@@ -7,6 +7,8 @@ class Movie < ApplicationRecord
 
   before_save :generate_slug
 
+  enum rating:[0,1,2,3,4,5]
+
   def generate_slug
     self.slug = title.parameterize
   end
