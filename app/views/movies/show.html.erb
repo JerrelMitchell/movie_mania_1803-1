@@ -1,4 +1,8 @@
 <h1><%= @movie.title %></h1>
+<h4>Genres for this Movie:</h4>
+<% @movie_genres.each do |genre| %>
+<%= genre.name %>
+<% end %>
 
 <p>Synopsis of the movie:</p>
 <p><%= @movie.description %></p>

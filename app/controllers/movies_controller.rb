@@ -17,6 +17,7 @@ class MoviesController < ApplicationController
 
   def show
     @movie = Movie.find_by(slug: params[:slug])
+    @movie_genres = @movie.genres
   end
 
   private
