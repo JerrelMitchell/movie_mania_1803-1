@@ -1,6 +1,7 @@
 <h3><%= @genre.name %></h3>
 <h5>Average Movie Rating: <%= @genre_average_rating.to_f.round(2) %></h5>
-<h6>Highest Movie Rating: <%= @genre_highest_rating %><h6>
+<h5>Highest Movie Rating: <%= @genre_highest_rating %><h5>
+<h5>Lowest Movie Rating: <%= @genre_lowest_rating %><h5>
 
 <% @genre_movies.each do |movie| %>
   <h6><%= movie.title %></h6>

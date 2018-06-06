@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :show, :index, :create]
   resources :movies, only: [:index]
-  resources :genres, only: [:index, :show]
+  resources :genres, only: [:index, :show, :create]
 
   resources :directors, shallow: true do
     resources :movies, param: :slug
@@ -17,7 +17,6 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :categories, only: [:index]
-    resources :genres, only: [:index, :new, :create]
   end
 
   resources :carts, only: [:create]

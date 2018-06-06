@@ -14,9 +14,8 @@ describe "User visits genres index page" do
 
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 
-      visit admin_genres_path
+      visit genres_path
 
-      expect(page).to have_content("Admin Genres")
       expect(page).to have_content(@genre1.name)
       expect(page).to have_content(@genre2.name)
     end
@@ -25,28 +24,30 @@ describe "User visits genres index page" do
       new_genre = 'Romance'
       admin = User.create(username: "Dee", password: "password", role: 1)
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
-      visit admin_genres_path
+
+      visit genres_path
 
       expect(page).to have_content("Create New Genre")
 
       fill_in :genre_name, with: new_genre
       click_on 'Create Genre'
 
-      expect(current_path).to eq(admin_genres_path)
+      save_and_open_page
+
+      expect(current_path).to eq(genres_path)
       expect(page).to have_content(new_genre)
     end
   end
 
   context "as default user" do
-    it "does not allow default user to see admin genres index" do
+    it "does not allow default user to see admin create genre form" do
       user = User.create(username: "Ian", password: "password123", role: 0)
-
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
-      visit admin_genres_path
+      visit genres_path
 
-      expect(page).to_not have_content("Admin Genres")
-      expect(page).to have_content("The page you were looking for doesn't exist")
+      expect(page).to_not have_content("Create New Genre")
+      expect(page).to_not have_button('Create Genre')
     end
   end
 end
