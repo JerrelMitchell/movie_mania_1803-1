@@ -12,11 +12,6 @@ class GenresController < ApplicationController
     @genre_lowest_rating = @genre.lowest_movie_rating
   end
 
-  def create
-    Genre.create(genres_params)
-    redirect_to genres_path
-  end
-
   private
 
     def genres_params

@@ -2,7 +2,7 @@
 
 <% if !current_user.nil? && current_admin? %>
 <h3>Create New Genre</h3>
-  <%= form_for @genre do |f| %>
+  <%= form_for [:admin, @genre] do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name %>
     <%= f.submit %>

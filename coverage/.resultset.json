@@ -198,6 +198,7 @@
         null,
         1,
         1,
+        1,
         null,
         null,
         1,
@@ -941,18 +942,26 @@
         null,
         null,
         1,
-        1,
-        1,
-        null,
         null,
         1,
-        null,
-        1,
-        1,
+        0,
         null,
         null
       ],
-      "/Users/kelveaux/turing/2module/exercises2/movie_mania_1803-1/app/controllers/admin/categories_controller.rb": [
+      "/Users/kelveaux/turing/2module/exercises2/movie_mania_1803-1/app/controllers/admin/genres_controller.rb": [
+        1,
+        1,
+        0,
+        0,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
         1,
         1,
         null,
@@ -966,6 +975,12 @@
         null,
         1,
         2,
+        null,
+        null
+      ],
+      "/Users/kelveaux/turing/2module/exercises2/movie_mania_1803-1/app/controllers/admin/categories_controller.rb": [
+        1,
+        1,
         null,
         null
       ],
@@ -1117,6 +1132,6 @@
         null
       ]
     },
-    "timestamp": 1528298289
+    "timestamp": 1528298816
   }
 }

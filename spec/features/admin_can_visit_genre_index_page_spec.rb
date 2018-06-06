@@ -32,7 +32,7 @@ describe "User visits genres index page" do
       fill_in :genre_name, with: new_genre
       click_on 'Create Genre'
 
-      save_and_open_page
+      # save_and_open_page
 
       expect(current_path).to eq(genres_path)
       expect(page).to have_content(new_genre)
@@ -45,6 +45,8 @@ describe "User visits genres index page" do
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
       visit genres_path
+
+      # save_and_open_page
 
       expect(page).to_not have_content("Create New Genre")
       expect(page).to_not have_button('Create Genre')
